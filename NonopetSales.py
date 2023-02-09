@@ -39,3 +39,21 @@ class SalesForDay:
     def get_sales_dict(self):
         """Returns a dictionary whose keys are the names of the items sold and whose values are the number of those items sold"""
         return self._sales_dict
+
+
+
+
+class Business:
+    """Represents a business with a name"""
+
+    def __init__(self, name):
+        """Creates a new business with a specified name, number of days open, items, and sales record"""
+        self._name = name
+        self._day = 0
+        self._item_dict = {}
+        self._sales_record = []
+
+    def get_name(self):
+        """Returns name of business"""
+        return self._name
+
