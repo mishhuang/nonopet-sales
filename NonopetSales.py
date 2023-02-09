@@ -78,3 +78,10 @@ class Business:
                 if item in SalesForDay.get_sales_dict():
                     return SalesForDay.get_sales_dict().get(item, 0)
 
+    def total_sales_for_item(self, item):
+        """Returns total number of items sold for an item over the history of the business"""
+        total = 0
+        for day in range(0, self._day):
+            total += self.sales_of_item_for_day(day, item)
+        return total
+
