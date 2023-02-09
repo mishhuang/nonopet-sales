@@ -86,7 +86,7 @@ class Business:
         return total
 
     def total_profit_for_item(self, item):
-        """Returns total profit from a menu item over the history of the stand"""
+        """Returns total profit from a menu item over the history of the business"""
         profit = 0
         total_sold = self.total_sales_for_item(item)
         selling_price = self._item_dict.get(item).get_selling_price()
