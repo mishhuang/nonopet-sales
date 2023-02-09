@@ -15,13 +15,25 @@ class SalesItem:
         """Returns item name"""
         return self._name
 
+    def set_name(self, new_name):
+        """Sets new name for an item"""
+        self._name = new_name
+
     def get_wholesale_cost(self):
         """Returns item cost"""
         return self._cost
 
+    def set_wholesale_cost(self, new_cost):
+        """Sets new wholesale cost for an item"""
+        self._cost = new_cost
+
     def get_selling_price(self):
         """Returns item price"""
         return self._price
+
+    def set_selling_price(self, new_price):
+        """Sets new selling price for an item"""
+        self._price = new_price
 
 
 class SalesForDay:
