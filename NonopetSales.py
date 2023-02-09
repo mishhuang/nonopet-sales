@@ -71,3 +71,10 @@ class Business:
                 self._sales_record.append(daily_sales)
         self._day += 1
 
+    def sales_of_item_for_day(self, day, item):
+        """Returns the number of an item sold on a particular day"""
+        for SalesForDay in self._sales_record:
+            if day == SalesForDay.get_day():
+                if item in SalesForDay.get_sales_dict():
+                    return SalesForDay.get_sales_dict().get(item, 0)
+
