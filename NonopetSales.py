@@ -61,3 +61,13 @@ class Business:
         """Adds a new item to the dictionary of items"""
         self._item_dict[new_item.get_name()] = new_item
 
+    def enter_sales_for_today(self, sales_dict):
+        """Creates an object with the current day and a dictionary of items sold"""
+        for item in sales_dict:
+            if item not in self._item_dict:
+                raise InvalidSalesItemError
+            else:
+                daily_sales = SalesForDay(self._day, sales_dict)
+                self._sales_record.append(daily_sales)
+        self._day += 1
+
