@@ -94,3 +94,10 @@ class Business:
         profit += (total_sold * (selling_price - wholesale_cost))
         return profit
 
+    def total_profit_for_business(self):
+        """Returns total profit on all items sold over the history of the business"""
+        total_profit = 0
+        for item in self._item_dict:
+            item_profit = self.total_profit_for_item(item)
+            total_profit += item_profit
+        return total_profit
