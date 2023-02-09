@@ -57,3 +57,7 @@ class Business:
         """Returns name of business"""
         return self._name
 
+    def add_item(self, new_item):
+        """Adds a new item to the dictionary of items"""
+        self._item_dict[new_item.get_name()] = new_item
+
