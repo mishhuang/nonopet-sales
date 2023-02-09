@@ -85,3 +85,12 @@ class Business:
             total += self.sales_of_item_for_day(day, item)
         return total
 
+    def total_profit_for_item(self, item):
+        """Returns total profit from a menu item over the history of the stand"""
+        profit = 0
+        total_sold = self.total_sales_for_item(item)
+        selling_price = self._item_dict.get(item).get_selling_price()
+        wholesale_cost = self._item_dict.get(item).get_wholesale_cost()
+        profit += (total_sold * (selling_price - wholesale_cost))
+        return profit
+
